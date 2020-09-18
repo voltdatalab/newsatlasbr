@@ -1,0 +1,32 @@
+Package: newsatlasbr
+Type: Package
+Title: Extract data from Brazil's News Atlas (Atlas da Noticia)
+Version: 0.1.0
+Author: c(
+    person("Lucas", "Gelape", , "lucas@voltdata.info", c("aut", "cre")),
+    person("Sérgio", "Spagnuolo", , "sergio@voltdata.info", c("aut"))
+    )
+Maintainer: Lucas Gelape <lucas@voltdata.info>
+Description: This package gives a set of functions to extract data from and conduct analysis 
+    about [Brazil's News Atlas](https://atlas.jor.br/english/), an initiative that identifies 
+    Brazilian news organizations, specially focused on local news. This package extracts data 
+    available for free through the [API of the project](https://api.atlas.jor.br/docs).
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Imports:
+    dplyr (>= 0.8.0),
+    httr (>= 1.4.0),
+    jsonlite (>= 1.6),
+    rlang (>= 0.3.4),
+    magrittr (>= 1.5),
+    stringi,
+    ggplot2 (>= 3.0.0),
+    geobr,
+    viridis
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
