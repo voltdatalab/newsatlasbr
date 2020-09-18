@@ -8,14 +8,14 @@ The package facilitates data extraction from the project [open-data API](https:/
 
 Currently, the `newsatlasbr` package can be installed directly from its GitHub repository:
 
-```{r}
+```r
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("voltdatalab/newsatlasbr")
 ```
 
 Once installed, it can be loaded using the `library` function.
 
-```{r}
+```r
 library(newsatlasbr)
 ```
 
@@ -35,7 +35,7 @@ To access News Atlas' API, users [should be registered](https://api.atlas.jor.br
 
 As noted, the function sets the e-mail and password in the current R environment. Thus, users should repeat this operation on every new R session in which they intend to use the `newsatlasbr` package. *We stress that user and password are personal. Therefore, users should be careful when writing and saving them in R scripts, in order to avoid sharing these information*.
 
-```{r}
+```r
 atlasbr_signin(email = "example@account_exeample.com", password = "pass")
 ```
 
@@ -55,7 +55,7 @@ The following functions have a similar structure (no arguments) and returns the 
 * `almost_deserts`: municipalities that are *almost deserts*;
 * `n_orgs_100k`: municipalities with *at least 1 news organization*, informing both the *absolute* and *the rate per 100,00 inhabitants* number of news organizations.
 
-```{r}
+```r
 all_municipalities     <- get_municipalities()
 deserts_municipalities <- news_deserts()
 almost_deserts_muns    <- almost_deserts()
@@ -68,7 +68,7 @@ Those last three functions also have pairs, who allow the extraction of aggregat
 * `almost_deserts_state`: returns a dataset with the aggregate number of *almost news deserts* in each state or region. `(regions = F)` is the default;
 * `n_orgs_100k_state`: returns a dataset with the *absolute* and *per 100,000 inhabitants* number of news organizations in the state *and* region. This function is slightly different from the previous two, since the returned dataset always contains 27 observations. If `regions = T` (which unlike the others, is the default), new columns are added to each observation, including information on the region where the state is located.
 
-```{r}
+```r
 news_deserts_states     <- news_deserts_state()
 almost_deserts_regions  <- almost_deserts_state(regions = T)
 organizations_per_state <- n_orgs_100k_state()
@@ -78,7 +78,7 @@ Finally, `newsatlasbr` also include three functions to easily generate and expor
 
 * `news_deserts_map`: plots a map of Brazilian news deserts. Data can be on the municipal, state or regional-level (all three functions have `aggregation = "municipalities"` as the default). For states and regions, the user should choose if the visualization should display the *absolute* number of news deserts municipalities (default) or the *percentage* of those in each unit. As in the other functions, the user can export the map as a .jpg file with the argument `export = T`.
 
-```{r}
+```r
 # Plot map of the percentage of news deserts municipalities in each Brazilian state
 news_deserts_map(aggregation = "states", percentage = T)
 ```
@@ -87,31 +87,31 @@ news_deserts_map(aggregation = "states", percentage = T)
 
 <center>
 
-![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/states_deserts_percentage.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/states_deserts_percentage.jpg)#id .class width=90% height=90%
 
 </center>
 
-```{r}
+```r
 # Plot map of almost deserts in each region of the country
 almost_deserts_map(aggregation = "regions")
 ```
 
 <center>
 
-![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/region_almost_deserts.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/region_almost_deserts.jpg)#id .class width=90% height=90%
 
 </center>
 
 * `n_orgs_100k_map`:  plots a map with information on the number of news organizations per 100k/inhabitants. Data can be on the municipal, state or regional-level.
 
-```{r}
+```r
 # Plot map on the number of media orgs per 100k/inhab in each municipality
 n_orgs_100k_map()
 ```
 
 <center>
 
-![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/cities_100k_map.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/cities_100k_map.jpg)#id .class width=90% height=90%
 
 </center>
 
@@ -121,7 +121,7 @@ There are two functions to extract data on Brazilian news organizations: `organi
 
 So, the user can choose to retrieve data for the whole country, as previously said. She can also get all media organizations (`news = "all"`), meaning both news organizations and other media. And finally, she can restrict her dataset to only a subset of medias, such as "print", "online", "radio" or "tv".
 
-```{r}
+```r
 # Extract data on all news organizations from the state of SP
 sao_paulo_media <- organizations_state(uf = "SP")
 

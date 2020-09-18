@@ -8,14 +8,14 @@ O pacote extrai os dados da [API de dados abertos do projeto](https://www.atlas.
 
 Atualmente, o `newsatlasbr` pode ser instalado diretamente do seu repositório no GitHub:
 
-```{r}
+```r
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("voltdatalab/newsatlasbr")
 ```
 
 Uma vez instalado, ele pode ser carregado usando-se a função `library`.
 
-```{r}
+```r
 library(newsatlasbr)
 ```
 
@@ -35,7 +35,7 @@ Para acessar a API do Atlas da Notícia, os usuários [devem ser registrados](ht
 
 A função grava o e-mail e senha somente na sessão *atual* do usuário. Assim, ele deve repetir essa operação a cada nova sessão de R em que ele queira utilizar o pacote. *O usuário e senha são pessoais. Então, os usuários devem ser cautelosos ao escrevê-los e salvá-los em scripts, para evitar o seu compartilhamento*.
 
-```{r}
+```r
 atlasbr_signin(email = "example@account_exeample.com", password = "pass")
 ```
 
@@ -55,7 +55,7 @@ As funções a seguir têm uma estrutura semelhante (nenhum argumento) e retorna
 * `almost_deserts`: municipalities that are *quase desertos*;
 * `n_orgs_100k`: municípios com, pelo menos, um veículo, informando tanto o *número absoluto* de veículos quanto a sua *taxa por 100 mil habitantes*.
 
-```{r}
+```r
 all_municipalities     <- get_municipalities()
 deserts_municipalities <- news_deserts()
 almost_deserts_muns    <- almost_deserts()
@@ -68,7 +68,7 @@ Essas funções têm "pares", que permitem a extração de dados agregados em es
 * `almost_deserts_state`: retorna um banco com o número agregado de *quase desertos* em cada estado ou região. O padrão da função são estados (`regions = F`);
 * `n_orgs_100k_state`: retorna um banco com o *número absoluto* e a *taxa por 100 mil habitantes* de veículos de notícias nos estados **e** regiões. Essa função é um pouco diferente das duas anteriores, uma vez que o banco de dados resultante dela *sempre* terá 27 observações. Se `regions = T` (que, ao contrário das anteriores, é o padrão da função), novas colunas são adicionadas, incluindo informações sobre a região em que cada estado está localizado.
 
-```{r}
+```r
 news_deserts_states     <- news_deserts_state()
 almost_deserts_regions  <- almost_deserts_state(regions = T)
 organizations_per_state <- n_orgs_100k_state()
@@ -78,7 +78,7 @@ Por fim, `newsatlasbr` também inclui três funções para gerar e exportar mapa
 
 * `news_deserts_map`: plota um mapa dos desertos de notícia brasileiros. Os dados podem ser agregados em municípios, estados ou regiões (as três funções têm o município como padrão: `aggregation = "municipalities"`). Para estados e regiões, o usuário deve escolhar se ele deseja visualizar o *número absoluto* de desertos de notícias (padrão) ou o *percentual* nessas agregações. Como nas demais funções, o usuário pode exportar os mapas como um arquivo .jpg usando o argumento `export = T`.
 
-```{r}
+```r
 # Plotar um mapa com o percentual de desertos de noticia em cada estado brasileiro
 news_deserts_map(aggregation = "states", percentage = T)
 ```
@@ -87,31 +87,31 @@ news_deserts_map(aggregation = "states", percentage = T)
 
 <center>
 
-![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/states_deserts_percentage.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/states_deserts_percentage.jpg)
 
 </center>
 
-```{r}
+```r
 # Plota um mapa de quase desertos em cada regiao do pais
 almost_deserts_map(aggregation = "regions")
 ```
 
 <center>
 
-![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/region_almost_deserts.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/region_almost_deserts.jpg)
 
 </center>
 
 * `n_orgs_100k_map`:  plota um mapa com informação sobre o número de veículos por 100 mil habitantes. Os dados podem ser em nível municipal, estadual ou regional.
 
-```{r}
+```r
 # Plota um mapa com o numero de organizacoes por 100k/hab em cada municipio
 n_orgs_100k_map()
 ```
 
 <center>
 
-![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/cities_100k_map.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/cities_100k_map.jpg)
 
 </center>
 
@@ -121,7 +121,7 @@ Existem duas funções para extrair dados de veículos de notícias brasileiros:
 
 Portanto, o usuário pode escolher obter dados para o país inteiro, como dito. Ele também pode obter todos os veículos (`news = "all"`), isto é veículos jornalísticos e não-jornalísticos. Por fim, ele pode restringir os dados a somente um subconjunto de mídias, como "impresso", "online", "radio" e "tv".
 
-```{r}
+```r
 # Extrair dados de todos veiculos jornalisticos do estado de SP
 sao_paulo_media <- organizations_state(uf = "SP")
 

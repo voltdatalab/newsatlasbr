@@ -8,14 +8,14 @@ The package facilitates data extraction from the project [open-data API](https:/
 
 Currently, the `newsatlasbr` package can be installed directly from its GitHub repository:
 
-```{r}
+```r
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("voltdatalab/newsatlasbr")
 ```
 
 Once installed, it can be loaded using the `library` function.
 
-```{r}
+```r
 library(newsatlasbr)
 ```
 
