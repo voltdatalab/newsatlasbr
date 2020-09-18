@@ -87,7 +87,7 @@ news_deserts_map(aggregation = "states", percentage = T)
 
 <center>
 
-![](/Users/lucasgelape/Google Drive (USP)/Volt/newsatlasbr/states_deserts_percentage.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/states_deserts_percentage.jpg){#id .class width=90% height=90%}
 
 </center>
 
@@ -98,7 +98,7 @@ almost_deserts_map(aggregation = "regions")
 
 <center>
 
-![](/Users/lucasgelape/Google Drive (USP)/Volt/newsatlasbr/region_almost_deserts.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/region_almost_deserts.jpg){#id .class width=90% height=90%}
 
 </center>
 
@@ -111,7 +111,7 @@ n_orgs_100k_map()
 
 <center>
 
-![](/Users/lucasgelape/Google Drive (USP)/Volt/newsatlasbr/cities_100k_map.jpg){#id .class width=90% height=90%}
+![](https://github.com/voltdatalab/newsatlasbr/blob/master/images/cities_100k_map.jpg){#id .class width=90% height=90%}
 
 </center>
 
