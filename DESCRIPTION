@@ -30,5 +30,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-Remotes:  
-    svn::https://github.com/ipeaGIT/geobr/r-package
+Remotes:
+    url::https://github.com/ipeaGIT/geobr/archive/refs/tags/v1.6.5.zip
