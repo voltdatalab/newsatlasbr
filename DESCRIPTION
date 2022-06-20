@@ -7,9 +7,9 @@ Author: c(
     person("Sérgio", "Spagnuolo", , "sergio@voltdata.info", c("aut"))
     )
 Maintainer: Lucas Gelape <lucas@voltdata.info>
-Description: This package gives a set of functions to extract data from and conduct analysis 
-    about [Brazil's News Atlas](https://atlas.jor.br/english/), an initiative that identifies 
-    Brazilian news organizations, specially focused on local news. This package extracts data 
+Description: This package gives a set of functions to extract data from and conduct analysis
+    about [Brazil's News Atlas](https://atlas.jor.br/english/), an initiative that identifies
+    Brazilian news organizations, specially focused on local news. This package extracts data
     available for free through the [API of the project](https://api.atlas.jor.br/docs).
 License: What license is it under?
 Encoding: UTF-8
@@ -25,10 +25,10 @@ Imports:
     ggplot2 (>= 3.0.0),
     geobr (>= 1.6.5999),
     viridis
-Suggests: 
+Suggests:
     testthat,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
 Remotes:  
-    ipeaGIT/geobr
+    svn::https://github.com/ipeaGIT/geobr/r-package
