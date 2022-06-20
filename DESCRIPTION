@@ -23,10 +23,12 @@ Imports:
     magrittr (>= 1.5),
     stringi,
     ggplot2 (>= 3.0.0),
-    geobr,
+    geobr (>= 1.6.5999),
     viridis
 Suggests: 
     testthat,
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+Remotes:  
+    ipeaGIT/geobr
